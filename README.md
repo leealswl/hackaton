@@ -3,8 +3,12 @@ cd hackaton/ai 에서
 
 가상환경 생성 & 실행
 python -m venv venv
-source venv/bin/activate   # Mac/Linux
-venv\Scripts\activate      # Windows
+
+맥
+source venv/bin/activate  
+
+윈도우
+venv\Scripts\activate     
 
 패키지설치
 pip install -r requirements.txt
