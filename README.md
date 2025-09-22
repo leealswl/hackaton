@@ -1,4 +1,6 @@
 ### 백엔드 (Django)
+cd hackaton/ai 에서
+
 가상환경 생성 & 실행
 python -m venv venv
 source venv/bin/activate   # Mac/Linux
@@ -16,7 +18,7 @@ python manage.py runserver
 http://127.0.0.1:8000/
 
 ### 프론트 (리액트)
-cd frontend/
+cd frontend 에사
 npm install
 
 http://127.0.0.1:5173/
