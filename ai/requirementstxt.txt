@@ -1,0 +1,11 @@
+torch
+torchvision
+onnxruntime
+numpy
+av
+opencv-python
+
+Django
+djangorestframework
+pillow
+

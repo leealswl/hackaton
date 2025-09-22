@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>영상 분석</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f7f7f7; }
+        .container { max-width: 800px; margin: auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1 { text-align: center; }
+        .result { margin-top: 20px; font-size: 1.2em; font-weight: bold; color: #d9534f; }
+        video { display: block; margin: 20px auto; border: 1px solid #ccc; border-radius: 10px; }
+        input[type="file"] { display: block; margin: 20px auto; }
+        input[type="submit"] { display: block; margin: 10px auto; padding: 10px 20px; font-size: 1em; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>영상 분석</h1>
+
+        <!-- 업로드 폼 -->
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" name="video_file" accept="video/*" required>
+            <input type="submit" value="분석 시작">
+        </form>
+
+        <!-- 비디오 재생 -->
+        {% if video_file_url %}
+            <video width="640" height="360" controls>
+                <source src="{{ video_file_url }}" type="video/mp4">
+                브라우저가 video 태그를 지원하지 않습니다.
+            </video>
+        {% endif %}
+
+        <!-- 분석 결과 -->
+        {% if result %}
+            <div class="result">
+                분석 결과: {{ result }}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
