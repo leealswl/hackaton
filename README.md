@@ -16,7 +16,7 @@ python manage.py runserver
 http://127.0.0.1:8000/
 
 ### 프론트 (리액트)
-cd frontend
+cd frontend/
 npm install
 
 http://127.0.0.1:5173/
